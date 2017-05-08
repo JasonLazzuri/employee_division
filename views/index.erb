@@ -1,0 +1,19 @@
+<h1>Divisions</h1>
+
+<p>Here are all the divisions:</p>
+
+
+
+<% @divisions.each() do |division| %>
+    <li><a href="/divisions/<%=division.id%>"><b><%= division.name %></b></a>
+    <a href="/divisions/<%= division.id() %>/edit">Update this division's name</a></li>
+  <% end %>
+
+  <h2>Add a new division</h2>
+   <form action="/divisions" method="post">
+     <div class="form-group">
+       <label for="division">Add new division</label>
+       <input type="text" name="division" required>
+     </div>
+     <button type="submit">Add a division!</button>
+   </form>

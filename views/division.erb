@@ -1,0 +1,18 @@
+<h1><%= @division.name %></h1>
+
+<h2>Here is a list of all the employees</h2>
+<ul>
+  <% @employees.each() do |employee| %>
+  <a href="/divisions/<%=@division.id%>/employee/<%=employee.id%>">
+  <li><%=employee.name%></li></a>
+  <%end%>
+</ul>
+
+<h2>Add a new employee</h2>
+ <form action="/divisions/<%=@division.id%>" method="post">
+   <div class="form-group">
+     <label for="employee">Add a new employee</label>
+     <input type="text" name="employee" required>
+   </div>
+   <button type="submit">Add an Employee!</button>
+ </form>
